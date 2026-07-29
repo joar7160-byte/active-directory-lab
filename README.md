@@ -36,6 +36,7 @@ The domain is structured around two departments, each with dedicated sub-OUs for
 
 \`\`\`
 adlab.local
+adlab.local
 ├── IT
 │   ├── Users
 │   ├── Computers
