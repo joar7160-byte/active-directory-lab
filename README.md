@@ -91,10 +91,6 @@ A matching offboarding flow was simulated to reflect a real departure process:
 ![Offboarded user in Disabled Users OU](screenshots/offboarding-disabled-users.png)
 
 ## Troubleshooting Notes
-
-Real issues encountered and resolved during the build, documented in full in [`docs/troubleshooting.md`](docs/troubleshooting.md):
-
-- Azure regional VM quota limits on a student subscription
 - DNS misconfiguration blocking domain join
 - Domain controllers restrict Remote Desktop access differently than member servers, requiring a change to the Default Domain Controllers Policy
 - UAC elevation prompts are a local machine control, separate from AD-delegated permissions, an important distinction between local rights and directory-level access
@@ -107,7 +103,3 @@ Real issues encountered and resolved during the build, documented in full in [`d
 - Enforcing policy at scale with Group Policy
 - Managing the full account lifecycle: onboarding, access changes, and offboarding
 - Diagnosing and resolving real infrastructure and permissions issues
-
-## Full Documentation
-
-See [`docs/runbook.md`](docs/runbook.md) for the complete step-by-step build log with the full screenshot set.
