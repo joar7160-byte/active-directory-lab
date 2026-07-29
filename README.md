@@ -29,16 +29,6 @@ The lab covers the full identity lifecycle a helpdesk or IT support technician w
 - **Client Machine:** Windows 11 Pro, domain-joined (vm-client01)
 - **Platform:** Microsoft Azure 
 - **Network:** Single VNet with a dedicated subnet for domain resources
-![Domain controller virtual machine](screenshots/01-infrastructure/01_dc_virtualmachine.webp)
-![VNet validation](screenshots/01-infrastructure/01_vnet_validation.webp)
- 
-## Domain Promotion
- 
-The domain controller was promoted after installing AD DS on the VM.
- 
-![AD DS installed](screenshots/02-domain-promotion/02_AD_DS%20installed.webp)
-![Domain promoted](screenshots/02-domain-promotion/domainpromoted.PNG)
- 
 ## Organizational Design
  
 The domain is structured around two departments, each with dedicated sub-OUs for Users, Computers, and Groups:
@@ -56,7 +46,7 @@ The domain is structured around two departments, each with dedicated sub-OUs for
 \`\`\`
 This structure mirrors how a real business would separate departments for permission scoping and policy targeting.
  
-![OU structure](screenshots/03-ou-structure/03_OUs.PNG)
+![OU structure, full expanded tree](screenshots/03-ou-structure/03_OUs.PNG)
  
 ## Delegated Access Control
  
@@ -67,25 +57,16 @@ Rather than granting broad administrative rights, a `Helpdesk-L1` group was crea
 - Read user account information
 The screenshot below shows the resulting permission set: Helpdesk-L1 has specific, scoped rights on the Finance Users OU, with no `Full Control` entry, in contrast to Domain Admins and Enterprise Admins, which do.
  
-![Delegated permissions on Finance Users OU](screenshots/04-delegation/04_helpdeskresetpassword.webp)
+![Advanced Security Settings showing Helpdesk-L1's scoped rights](screenshots/04-delegation/04_helpdeskresetpassword.webp)
  
 This was tested end to end: a `Helpdesk-L1` member was able to reset passwords for users in Finance, matching the intended scope.
- 
-![Delegation test](screenshots/09-delegation-test/09_helpdesk.webp)
- 
-## Domain Join
- 
-The client machine was joined to the domain and validated.
- 
-![Client joined to domain](screenshots/05-domain-join/joineddomain.PNG)
  
 ## Group Policy
  
 An `IT-Desktop-Policy` GPO was created and linked to the IT OU, then verified applying successfully on a domain-joined client after the client's computer object was moved into the correct OU.
  
-![GPO created](screenshots/06-group-policy/06_GPO.webp)
-![Desktop wallpaper policy enabled](screenshots/06-group-policy/06_desktopwallpaperpolicyenabled.webp)
-![Wallpaper change applied on client](screenshots/06-group-policy/06_wallpaperchange.webp)
+![GPO linked to IT OU](screenshots/06-group-policy/06_GPO.webp)
+![Wallpaper policy applied on the client](screenshots/06-group-policy/06_wallpaperchange.webp)
  
 ## Onboarding Simulation
  
@@ -96,10 +77,8 @@ A full onboarding flow was simulated to mirror a real new-hire process:
 3. Enforced a mandatory password change at first logon
 4. Granted the account remote access rights
 5. Verified successful login as the new user
-![New user group membership](screenshots/07-onboarding/07_memberof.PNG)
-![RDP access granted](screenshots/07-onboarding/07_rdp.PNG)
-![Test employee RDP session](screenshots/07-onboarding/07_temployeeRDP.webp)
-![Successful onboarding login](screenshots/07-onboarding/07_testemployee%20login.webp)
+![Finance-Staff group membership](screenshots/07-onboarding/07_memberof.PNG)
+![Successful login as the new user](screenshots/07-onboarding/07_testemployee%20login.webp)
  
 ## Offboarding Simulation
  
@@ -108,8 +87,11 @@ A matching offboarding flow was simulated to reflect a real departure process:
 1. Disabled the user account
 2. Removed the account from its department security group
 3. Moved the account to a dedicated Disabled Users OU
-![Disabled account](screenshots/08-offboarding/08_disabledaccount.webp)
-![Offboarded user in Disabled Users OU](screenshots/08-offboarding/08_offboard.webp)
+![User shown in Disabled Users OU](screenshots/08-offboarding/08_disabledaccount.webp)
+ 
+## Delegation Test
+ 
+![helpdesktech's Helpdesk-L1 membership](screenshots/09-delegation-test/09_helpdesk.webp)
  
 ## Troubleshooting Notes
 - DNS misconfiguration blocking domain join
