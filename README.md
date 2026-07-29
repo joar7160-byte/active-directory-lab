@@ -27,7 +27,7 @@ The lab covers the full identity lifecycle a helpdesk or IT support technician w
 - **Domain:** adlab.local
 - **Domain Controller:** Windows Server 2022 (vm-dc-adlab)
 - **Client Machine:** Windows 11 Pro, domain-joined (vm-client01)
-- **Platform:** Microsoft Azure (Azure for Students subscription)
+- **Platform:** Microsoft Azure 
 - **Network:** Single VNet with a dedicated subnet for domain resources
 
 ## Organizational Design
