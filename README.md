@@ -73,6 +73,7 @@ A full onboarding flow was simulated to mirror a real new-hire process:
 2. Added the user to the relevant department security group
 3. Enforced a mandatory password change at first logon
 4. Granted the account remote access rights
+
 5. Verified successful login as the new user
 ![Finance-Staff group membership](screenshots/07-onboarding/07_memberof.PNG)
 ![Successful login as the new user](screenshots/07-onboarding/07_testemployee%20login.webp)
