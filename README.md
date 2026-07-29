@@ -35,12 +35,12 @@ The lab covers the full identity lifecycle a helpdesk or IT support technician w
 The domain is structured around two departments, each with dedicated sub-OUs for Users, Computers, and Groups:
 
 \`\`\`
-- adlab.local
-  - IT
+- **adlab.local** (domain)
+  - **IT**
     - Users
     - Computers
     - Groups (Helpdesk-L1)
-  - Finance
+  - **Finance**
     - Users
     - Computers
     - Groups
