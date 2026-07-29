@@ -97,7 +97,6 @@ A matching offboarding flow was simulated to reflect a real departure process:
 
 ## What This Demonstrates
 
-- Provisioning and managing cloud infrastructure end to end
 - Designing an OU structure around real organizational boundaries
 - Applying least-privilege principles through delegated permissions
 - Enforcing policy at scale with Group Policy
