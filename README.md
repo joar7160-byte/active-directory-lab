@@ -1,8 +1,3 @@
-# active-directory-lab
- 
-Companies use active directory to organize around departments and delgating permissions to certain departments like IT support access
-instead of broad admins rights 
- 
 # Active Directory Identity & Access Lab
  
 ## Overview
@@ -10,6 +5,8 @@ instead of broad admins rights
 Growing organizations need a way to manage user access without giving every support technician full administrative rights. This project simulates that problem: a small company environment built in Azure, structured around departments, with scoped delegated permissions so IT support staff can handle day to day account tasks (password resets, account unlocks) without holding domain-wide admin access.
  
 The lab covers the full identity lifecycle a helpdesk or IT support technician would actually handle: infrastructure setup, domain design, delegated access control, policy enforcement, and full onboarding/offboarding workflows.
+ 
+**Scope:** 2 departments, 6 OUs, 1 domain-joined client, 1 delegated support group, 1 GPO, and a full onboarding/offboarding cycle tested end to end with a test user account.
  
 ## Skills & Tools
  
